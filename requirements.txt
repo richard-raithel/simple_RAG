@@ -1,0 +1,8 @@
+fitz
+PyMuPDF
+gradio
+numpy
+openai
+pymongo
+python-dotenv
+sentence_transformers
