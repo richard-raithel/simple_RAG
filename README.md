@@ -1,20 +1,40 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Document Retrieval and Q&A System with RAG Workflow
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Overview
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+This project provides a Retrieval-Augmented Generation (RAG) workflow for building a document retrieval and Q&A system. The pipeline includes extracting text from PDFs, preprocessing and embedding data, storing documents in MongoDB, and deploying a chatbot interface using OpenAI's GPT models for natural language responses based on retrieved documents.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+---
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Features
+- **Data Processing**:
+  - Extract text from PDFs using PyMuPDF (`fitz`).
+  - Preprocess text with tokenization, stopword removal, and lemmatization.
+  - Generate embeddings for documents and IDs using Sentence Transformers.
+
+- **Database Integration**:
+  - Store and retrieve processed documents and embeddings in MongoDB.
+
+- **Document Retrieval**:
+  - Perform similarity-based retrieval using cosine similarity.
+  - Rank and return the top relevant documents for a query.
+
+- **Chatbot Interface**:
+  - Generate responses based on retrieved documents using OpenAI GPT models.
+  - Provide a user-friendly interface via Gradio.
+
+---
+
+## Requirements
+
+### Prerequisites
+- Python 3.8 or higher
+- MongoDB installed locally or accessible via URI
+- OpenAI API key for GPT integration
+- Required Python libraries (listed in `requirements.txt`)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/document-retrieval-rag.git
+   cd document-retrieval-rag
